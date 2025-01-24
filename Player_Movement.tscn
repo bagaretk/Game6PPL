@@ -89,7 +89,7 @@ shape = SubResource("CircleShape2D_fh1j6")
 scale = Vector2(0.23, 0.23)
 sprite_frames = SubResource("SpriteFrames_n4lro")
 autoplay = "default"
-frame_progress = 0.950513
+frame_progress = 0.52743
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
 position = Vector2(1.1958, 0)
