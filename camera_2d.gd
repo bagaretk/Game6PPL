@@ -1,6 +1,8 @@
 extends Camera2D
 
-@onready var health_bar = $HealthBar # Asigură-te că ai adresa corectă a HealthBar
+@onready var health_bar = $LayerBar/HealthBar # Asigură-te că ai adresa corectă a HealthBar
+@onready var oxygen_bottle = $LayerBar/OxygenBottle # Asigură-te că ai adresa corectă a HealthBar
+
 #@onready var camera = $Camera2D# Asigură-te că ai adresa corectă a HealthBar
 func _ready():
 	# Setează poziția inițială a health_bar-ului
@@ -18,4 +20,6 @@ func update_health_bar_position():
 
 	# Poziționează health_bar în colțul din stânga sus al camerei
 	# Poți modifica aceste valori pentru a muta health_bar-ul mai aproape sau mai departe
-	#health_bar.position = Vector2(-viewport_size.x / 2 + 20, -viewport_size.y / 2 + 20)
+	health_bar.position = Vector2(110, 50)
+	oxygen_bottle.position = Vector2(50, 60)
+	
