@@ -1,13 +1,6 @@
-<<<<<<< HEAD
 [gd_scene load_steps=6 format=3 uid="uid://b4emayn3vx0j8"]
 
 [ext_resource type="Texture2D" uid="uid://cdu0ea5e1fxy3" path="res://Resources/PNG/sea_background.png" id="1_b7poy"]
-=======
-[gd_scene load_steps=5 format=3 uid="uid://bokg0jlngsrw0"]
-
-[ext_resource type="Texture2D" uid="uid://cdu0ea5e1fxy3" path="res://Resources/PNG/sea_background.png" id="1_b7poy"]
-[ext_resource type="PackedScene" path="res://enemy1_menu.tscn" id="2_sjr75"]
->>>>>>> 24b404011becdafeba8cb88f1992b2677e55bb0a
 [ext_resource type="Texture2D" uid="uid://dki5lf4gm1b50" path="res://Resources/PNG/Buttons/play.png" id="3_adkd6"]
 [ext_resource type="Script" path="res://Scripts/start_btn.gd" id="4_cqu17"]
 [ext_resource type="PackedScene" uid="uid://bvq0mpkhr2wf6" path="res://spawner.tscn" id="4_uytji"]
