@@ -31,7 +31,10 @@ func _ready() -> void:
 	randomize()
 
 	# Reference the active Camera2D node
-	
+	camera = get_viewport().get_camera_2d()
+	if not camera:
+		push_error("No Camera2D found in the viewport.")
+		return
 
 	# 1) Timer for Enemy1, 2, 3
 	_timer = Timer.new()
@@ -48,9 +51,6 @@ func _ready() -> void:
 	add_child(_timer_enemy4)
 
 func get_camera_visible_rect() -> Rect2:
-	camera = get_viewport().get_camera_2d()
-	if not camera:
-		push_error("No Camera2D found in the viewport.")
 	var viewport_size_i = get_viewport().size  # Vector2i
 	var viewport_size = Vector2(viewport_size_i.x, viewport_size_i.y)  # Convert to Vector2
 	var zoom = camera.zoom
