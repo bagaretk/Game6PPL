@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3dt2vd6vib2a"]
+[gd_scene load_steps=4 format=3 uid="uid://btwww85fklj3w"]
 
 [ext_resource type="Texture2D" uid="uid://linvwp8j0sgc" path="res://Resources/enemy1.png" id="1_022pm"]
-[ext_resource type="Script" path="res://Scripts/enemy1_menu.gd" id="2_w0355"]
+[ext_resource type="Script" path="res://Scripts/enemy1.gd" id="1_ysfr8"]
 
-[node name="enemy1_menu" type="CharacterBody2D"]
-script = ExtResource("2_w0355")
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ob03"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Enemy1" type="CharacterBody2D" groups=["Fish"]]
+script = ExtResource("1_ysfr8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_022pm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0ob03")
+disabled = true

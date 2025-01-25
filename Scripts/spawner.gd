@@ -9,10 +9,10 @@ extends Node2D
 # Now just preload Enemy4 without adding it to the probability system
 @onready var Enemy4 = preload("res://healthbubble.tscn")
 
-@export var spawn_interval: float = 5.0
+@export var spawn_interval: float = 0.5
 @export var spawn_offset_x: float = 100.0
 @export var spawn_area_top: float = 0.0
-@export var spawn_area_bottom: float = 600.0
+@export var spawn_area_bottom: float = 900.0
 @export var spawn_margin: float = 100.0  # Distance outside the camera's view to spawn enemies
 
 # Probabilities for the first three enemies
@@ -115,5 +115,8 @@ func _spawn_enemy(enemy_scene: PackedScene, is_enemy4: bool = false) -> void:
 			var sprite = enemy_instance.get_node_or_null("Sprite2D")
 			if sprite:
 				sprite.flip_h = false
+				
+	var random_scale = randf_range(0.6, 1.5)  # Adjust scale between 0.5x and 1.5x
+	enemy_instance.scale = Vector2(random_scale, random_scale)	
 
 	get_parent().add_child(enemy_instance)

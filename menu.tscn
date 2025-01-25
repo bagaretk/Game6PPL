@@ -20,6 +20,7 @@ texture = ExtResource("1_b7poy")
 position = Vector2(577, 211)
 script = ExtResource("5_o6dpl")
 spawn_interval = 2.0
+spawn_area_bottom = 600.0
 prob_enemy2 = 0.2
 prob_enemy3 = 0.3
 enemy4_spawn_interval = 1.0
