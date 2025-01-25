@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://b4emayn3vx0j8"]
 
 [ext_resource type="Texture2D" uid="uid://cdu0ea5e1fxy3" path="res://Resources/PNG/sea_background.png" id="1_b7poy"]
-[ext_resource type="Texture2D" uid="uid://dki5lf4gm1b50" path="res://Resources/PNG/Buttons/play.png" id="3_adkd6"]
 [ext_resource type="Script" path="res://Scripts/start_btn.gd" id="4_cqu17"]
 [ext_resource type="PackedScene" uid="uid://bvq0mpkhr2wf6" path="res://spawner.tscn" id="4_uytji"]
+[ext_resource type="Texture2D" uid="uid://b6dtd81yo6sll" path="res://Resources/PNG/Buttons/PlayButton.png" id="5_1t81k"]
 [ext_resource type="Script" path="res://Scripts/spawner_menu.gd" id="5_o6dpl"]
 [ext_resource type="Texture2D" uid="uid://dyermw5py2mb6" path="res://Resources/PNG/Buttons/ExitButton.png" id="6_mmh42"]
 [ext_resource type="Texture2D" uid="uid://2ku2p7w4ekpb" path="res://logo.png" id="7_788jl"]
@@ -19,8 +19,12 @@ texture = ExtResource("1_b7poy")
 [node name="Spawner" parent="." instance=ExtResource("4_uytji")]
 position = Vector2(577, 211)
 script = ExtResource("5_o6dpl")
+<<<<<<< HEAD
+spawn_interval = 3.0
+=======
 spawn_interval = 2.0
 spawn_area_bottom = 600.0
+>>>>>>> 3da848f4127f3125af83a6c583afc021b7645718
 prob_enemy2 = 0.2
 prob_enemy3 = 0.3
 enemy4_spawn_interval = 1.0
@@ -33,7 +37,7 @@ offset_top = 299.0
 offset_right = 604.0
 offset_bottom = 557.0
 scale = Vector2(0.45, 0.45)
-icon = ExtResource("3_adkd6")
+icon = ExtResource("5_1t81k")
 flat = true
 
 [node name="Button2" type="Button" parent="CanvasLayer"]
