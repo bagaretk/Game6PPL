@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4emayn3vx0j8"]
+
+[ext_resource type="Texture2D" uid="uid://cdu0ea5e1fxy3" path="res://Resources/PNG/sea_background.png" id="1_b7poy"]
+[ext_resource type="PackedScene" uid="uid://b3dt2vd6vib2a" path="res://enemy1_menu.tscn" id="2_sjr75"]
+[ext_resource type="Texture2D" uid="uid://dki5lf4gm1b50" path="res://Resources/PNG/Buttons/play.png" id="3_adkd6"]
+[ext_resource type="Script" path="res://Scripts/start_btn.gd" id="4_cqu17"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("4_cqu17")
+
+[node name="SeaBackground" type="Sprite2D" parent="."]
+position = Vector2(575.5, 325.375)
+scale = Vector2(0.599479, 0.597454)
+texture = ExtResource("1_b7poy")
+
+[node name="enemy1_menu" parent="." instance=ExtResource("2_sjr75")]
+position = Vector2(965, 290)
+scale = Vector2(0.9, 0.9)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 96.0
+offset_top = 299.0
+offset_right = 604.0
+offset_bottom = 557.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("3_adkd6")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
