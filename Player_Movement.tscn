@@ -83,7 +83,18 @@ animations = [{
 "speed": 18.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y65yp"]
+bg_color = Color(0.6, 0.6, 0.6, 0.0509804)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gyi1"]
+bg_color = Color(0.246702, 0.304111, 0.876016, 1)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(580, 318)
 script = ExtResource("1_bvn0q")
 
@@ -142,4 +153,11 @@ frame_progress = 0.31246
 [node name="HealthTimer" type="Timer" parent="."]
 wait_time = 0.064
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(6.885, 6.885)
+shape = SubResource("CircleShape2D_fh1j6")
+
 [connection signal="timeout" from="HealthTimer" to="." method="_on_health_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

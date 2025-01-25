@@ -70,7 +70,7 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="HealthBubble" type="CharacterBody2D"]
+[node name="HealthBubble" type="CharacterBody2D" groups=["Health"]]
 script = ExtResource("1_5nbjy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
