@@ -1,17 +1,88 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbe0y0kjfhfwt"]
+[gd_scene load_steps=14 format=3 uid="uid://cbe0y0kjfhfwt"]
 
 [ext_resource type="Script" path="res://Scripts/healthbubble.gd" id="1_5nbjy"]
 [ext_resource type="Texture2D" uid="uid://c2xo3n7qyg7md" path="res://Resources/clear-deco-bubble-balloon-20-1pc-12298-p.png" id="2_knurc"]
+[ext_resource type="Texture2D" uid="uid://gi0i8s0lgql0" path="res://Resources/animations/Untitled_design__1_-removebg-preview.png" id="3_8qs2d"]
+[ext_resource type="Texture2D" uid="uid://bx16ay1536swv" path="res://Resources/animations/Untitled_design__2_-removebg-preview.png" id="4_0d2fy"]
+[ext_resource type="Texture2D" uid="uid://cepdttf6mnqeg" path="res://Resources/animations/Untitled_design__3_-removebg-preview.png" id="5_guhxu"]
+[ext_resource type="Texture2D" uid="uid://cd7bffd6ssp88" path="res://Resources/animations/Untitled_design__4_-removebg-preview.png" id="6_c41p5"]
+[ext_resource type="Texture2D" uid="uid://yo1ku1slwuhr" path="res://Resources/animations/Untitled_design__5_-removebg-preview.png" id="7_w1mya"]
+[ext_resource type="Texture2D" uid="uid://bnxc2aqnle21g" path="res://Resources/animations/Untitled_design__6_-removebg-preview.png" id="8_f0a3n"]
+[ext_resource type="Texture2D" uid="uid://bacblksx3oosr" path="res://Resources/animations/Untitled_design__7_-removebg-preview.png" id="9_yt151"]
+[ext_resource type="Texture2D" uid="uid://y83q20op2i0k" path="res://Resources/animations/Untitled_design__8_-removebg-preview.png" id="10_u8nil"]
+[ext_resource type="Texture2D" uid="uid://06q2cx531phv" path="res://Resources/animations/Untitled_design__9_-removebg-preview.png" id="11_fxghy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e2qhn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ms70h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8qs2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0d2fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_guhxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c41p5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w1mya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f0a3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yt151")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u8nil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fxghy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u8nil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yt151")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f0a3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w1mya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c41p5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_guhxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0d2fy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="HealthBubble" type="CharacterBody2D"]
 script = ExtResource("1_5nbjy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("2_knurc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2.95, 2.95)
 shape = SubResource("CircleShape2D_e2qhn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.215, 0.215)
+sprite_frames = SubResource("SpriteFrames_ms70h")
+autoplay = "default"
