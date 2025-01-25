@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvdmqnayu68hf"]
+
+[ext_resource type="Script" path="res://player_health_bar.gd" id="1_tf303"]
+[ext_resource type="Texture2D" uid="uid://c2xo3n7qyg7md" path="res://Resources/clear-deco-bubble-balloon-20-1pc-12298-p.png" id="2_8udt5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dvito"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svx60"]
+bg_color = Color(0.6, 0.6, 0.6, 0.0509804)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fq53t"]
+bg_color = Color(0.246702, 0.304111, 0.876016, 1)
+
+[node name="HealthBar" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_tf303")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+scale = Vector2(6.885, 6.885)
+shape = SubResource("CircleShape2D_dvito")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.275, 0.275)
+texture = ExtResource("2_8udt5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0.448425, 0)
+scale = Vector2(0.448369, 0.448369)
+zoom = Vector2(0.825, 0.825)
+limit_left = -10000
+limit_right = 10000
+limit_bottom = 820
+position_smoothing_enabled = true
+position_smoothing_speed = 0.5
+
+[node name="HealthBar" type="ProgressBar" parent="Camera2D"]
+offset_left = 1071.78
+offset_top = -691.395
+offset_right = 1245.78
+offset_bottom = -677.395
+theme_override_styles/background = SubResource("StyleBoxFlat_svx60")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fq53t")
+max_value = 10.0
+value = 6.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="FlashAnimation" type="AnimationPlayer" parent="Camera2D/HealthBar"]
