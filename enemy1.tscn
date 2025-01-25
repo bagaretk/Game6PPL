@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bc43h2dkv3f1u"]
+[gd_scene load_steps=4 format=3 uid="uid://bc43h2dkv3f1u"]
 
 [ext_resource type="Script" path="res://Scripts/enemy1.gd" id="1_spwvl"]
 [ext_resource type="Texture2D" uid="uid://linvwp8j0sgc" path="res://Resources/enemy1.png" id="2_qbvy5"]
 
-[node name="Enemy1" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_xol6a"]
+
+[node name="Enemy1" type="CharacterBody2D" groups=["Fish"]]
 script = ExtResource("1_spwvl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xol6a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.4, 0.4)

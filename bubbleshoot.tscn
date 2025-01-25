@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsd65botrvjkj"]
+
+[ext_resource type="Script" path="res://Scripts/bubbleshoot.gd" id="1_u6pyk"]
+[ext_resource type="Texture2D" uid="uid://b8n22t0netk5" path="res://Resources/pngtree-white-bubble-speech-png-image_10162559.png" id="2_awgvs"]
+
+[node name="bubbleshoot" type="Node2D"]
+script = ExtResource("1_u6pyk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_awgvs")
