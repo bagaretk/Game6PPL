@@ -35,6 +35,7 @@ animations = [{
 }]
 
 [node name="Enemy1" type="CharacterBody2D" groups=["Fish"]]
+scale = Vector2(-1, 1)
 script = ExtResource("1_ju2bw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

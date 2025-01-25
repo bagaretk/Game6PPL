@@ -110,21 +110,18 @@ func _spawn_enemy(enemy_scene: PackedScene, is_enemy4: bool = false) -> void:
 			# Spawn from the right
 			spawn_x = camera_rect.position.x + screen_width + spawn_offset_x + spawn_margin
 			spawn_y = randf_range(camera_rect.position.y, camera_rect.position.y + screen_height)
-		
+
 		enemy_instance.position = Vector2(spawn_x, spawn_y)
 
-		# If spawning from the left, invert the speed
-		if from_side < 0.5:
-			enemy_instance.speed *= -1
-			var sprite = enemy_instance.get_node_or_null("Sprite2D")
-			if sprite:
-				sprite.flip_h = true
-		else:
-			var sprite = enemy_instance.get_node_or_null("Sprite2D")
-			if sprite:
-				sprite.flip_h = false
+		# If spawning from the left, invert the speed and flip the sprite
+		var sprite = enemy_instance.get_node_or_null("AnimatedSprite2D")
+		if sprite:
+			if from_side < 0.5:
+				sprite.scale.x = -abs(sprite.scale.x)  # Flip horizontally
+				enemy_instance.speed *= -1
+			else:
+				sprite.scale.x = abs(sprite.scale.x)  # Ensure normal orientation
 				
+	get_parent().add_child(enemy_instance)
 	var random_scale = randf_range(0.6, 1.5)  # Adjust scale between 0.5x and 1.5x
 	enemy_instance.scale = Vector2(random_scale, random_scale)	
-
-	get_parent().add_child(enemy_instance)
