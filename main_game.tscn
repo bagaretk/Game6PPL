@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cr3l5ccq07ema" path="res://Resources/PNG/farground.png" id="3_bo0de"]
 [ext_resource type="Texture2D" uid="uid://dkmj1xmytvl3o" path="res://Resources/PNG/foreground.png" id="4_msdfe"]
 [ext_resource type="Texture2D" uid="uid://dmkamagy8seyj" path="res://Resources/PNG/mid_background.png" id="4_pe02m"]
-[ext_resource type="PackedScene" path="res://spawner.tscn" id="6_vbeu7"]
+[ext_resource type="PackedScene" uid="uid://bvq0mpkhr2wf6" path="res://spawner.tscn" id="6_vbeu7"]
 
 [node name="MainGame" type="Node2D"]
 
@@ -20,7 +20,8 @@ layer = -111
 motion_mirroring = Vector2(1920, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
-position = Vector2(516, 336)
+position = Vector2(1032.5, -3560)
+scale = Vector2(9.10469, 8.21482)
 texture = ExtResource("2_t17dc")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://c54gow3u0auam"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bvn0q"]
-[ext_resource type="Texture2D" uid="uid://b8n22t0netk5" path="res://Resources/pngtree-white-bubble-speech-png-image_10162559.png" id="2_hcsur"]
+[ext_resource type="Texture2D" uid="uid://c2xo3n7qyg7md" path="res://Resources/clear-deco-bubble-balloon-20-1pc-12298-p.png" id="2_xekwp"]
 [ext_resource type="Texture2D" uid="uid://doj8qfxn2j5mf" path="res://Resources/set-transparent-glass-globes-transparent-background-b.png" id="3_7bbnh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fh1j6"]
@@ -85,7 +85,12 @@ script = ExtResource("1_bvn0q")
 scale = Vector2(5.75, 5.75)
 shape = SubResource("CircleShape2D_fh1j6")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.275, 0.275)
+texture = ExtResource("2_xekwp")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 scale = Vector2(0.23, 0.23)
 sprite_frames = SubResource("SpriteFrames_n4lro")
 autoplay = "default"
@@ -95,10 +100,6 @@ frame_progress = 0.52743
 position = Vector2(1.1958, 0)
 scale = Vector2(1.19565, 1.19565)
 zoom = Vector2(0.825, 0.825)
+limit_bottom = 820
 position_smoothing_enabled = true
 position_smoothing_speed = 0.5
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(0.275, 0.275)
-texture = ExtResource("2_hcsur")

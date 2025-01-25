@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbe0y0kjfhfwt"]
+[gd_scene load_steps=4 format=3 uid="uid://cbe0y0kjfhfwt"]
 
 [ext_resource type="Script" path="res://Scripts/healthbubble.gd" id="1_5nbjy"]
-[ext_resource type="Texture2D" uid="uid://b7qj6u37l7an2" path="res://Resources/healthbubble.png" id="2_rl8oj"]
+[ext_resource type="Texture2D" uid="uid://c2xo3n7qyg7md" path="res://Resources/clear-deco-bubble-balloon-20-1pc-12298-p.png" id="2_knurc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e2qhn"]
 
 [node name="HealthBubble" type="CharacterBody2D"]
 script = ExtResource("1_5nbjy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_rl8oj")
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_knurc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.95, 2.95)
+shape = SubResource("CircleShape2D_e2qhn")
