@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-class_name Fish3
+class_name Fish4
 
-@export var speed: float = 100.0
-var hp: int = 5  # Enemy3 can take 5 hits
+@export var speed: float = 400.0
+var hp: int = 3  # Enemy1 can take 3 hits
 
 func _physics_process(delta: float) -> void:
 	velocity.x = -speed
@@ -12,4 +12,4 @@ func _physics_process(delta: float) -> void:
 func take_damage(amount: int) -> void:
 	hp -= amount
 	if hp <= 0:
-		queue_free()
+		queue_free()  # remove enemy from the scene

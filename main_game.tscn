@@ -79,6 +79,7 @@ script = ExtResource("1_3dsh5")
 z_index = 1
 position = Vector2(398, 912)
 scale = Vector2(0.1, 0.1)
+collision_layer = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -111

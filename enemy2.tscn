@@ -36,6 +36,7 @@ animations = [{
 }]
 
 [node name="Enemy2" type="CharacterBody2D" groups=["Fish"]]
+collision_mask = 2
 script = ExtResource("1_jalha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

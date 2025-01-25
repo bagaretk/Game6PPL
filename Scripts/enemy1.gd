@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-class_name Fish1;
+class_name Fish1
 
 @export var speed: float = 400.0
 var hp: int = 3  # Enemy1 can take 3 hits

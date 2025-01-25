@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-class_name HealthBubble;
+class_name HealthBubble
 
 @export var speed: float = 100.0
 @export var wave_amplitude: float = 50.0

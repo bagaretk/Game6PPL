@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8iwxerfafnun"]
+[gd_scene load_steps=9 format=3 uid="uid://dio4dk5jtfccv"]
 
-[ext_resource type="Script" path="res://Scripts/enemy1.gd" id="1_8m2uk"]
+[ext_resource type="Script" path="res://enemy_5.gd" id="1_go14y"]
 [ext_resource type="Texture2D" uid="uid://dbaqk1dnd6na2" path="res://Resources/Fish/enemy5_1.png" id="2_0nssd"]
 [ext_resource type="Texture2D" uid="uid://d2hsi1abynsd3" path="res://Resources/Fish/enemy5_2.png" id="3_rlehj"]
 [ext_resource type="Texture2D" uid="uid://x3jcs08biswe" path="res://Resources/Fish/enemy5_3.png" id="4_h3sdo"]
@@ -33,8 +33,9 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="Enemy1" type="CharacterBody2D" groups=["Fish"]]
-script = ExtResource("1_8m2uk")
+[node name="Enemy5" type="CharacterBody2D" groups=["Fish"]]
+collision_mask = 2
+script = ExtResource("1_go14y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xol6a")
