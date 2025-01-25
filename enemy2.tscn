@@ -1,16 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://cywbsfffr8kpg"]
+[gd_scene load_steps=10 format=3 uid="uid://cywbsfffr8kpg"]
 
 [ext_resource type="Script" path="res://Scripts/enemy2.gd" id="1_jalha"]
 [ext_resource type="Texture2D" uid="uid://b2gtewq47as5d" path="res://Resources/enemy2.png" id="2_jt5tf"]
+[ext_resource type="Texture2D" uid="uid://cd06afsyerpci" path="res://Resources/Fish/enemy2_1.png" id="2_oiuvg"]
+[ext_resource type="Texture2D" uid="uid://bgvfnbokdbh7d" path="res://Resources/Fish/enemy2_2.png" id="3_stu37"]
+[ext_resource type="Texture2D" uid="uid://d3ykrh8pidl0q" path="res://Resources/Fish/enemy2_3.png" id="4_jma2a"]
+[ext_resource type="Texture2D" uid="uid://cyk0m2li8cnb4" path="res://Resources/Fish/enemy2_4.png" id="5_sv3v1"]
+[ext_resource type="Texture2D" uid="uid://dc7nkb632w7fe" path="res://Resources/Fish/enemy2_5.png" id="6_1sjjc"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_06l0s"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mb0wr"]
+radius = 46.0
+height = 226.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tp0uf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oiuvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_stu37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jma2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sv3v1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1sjjc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="Enemy2" type="CharacterBody2D" groups=["Fish"]]
 script = ExtResource("1_jalha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_06l0s")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mb0wr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 7)
+scale = Vector2(0.525, 0.525)
+sprite_frames = SubResource("SpriteFrames_tp0uf")
+frame_progress = 0.385909
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_jt5tf")
