@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwr451r1olkyv"
-path="res://.godot/imported/play.png-51c154418d1a70dd559504c0fc554d12.ctex"
+uid="uid://cg7elds15dte"
+path="res://.godot/imported/enemy5_5.png-713db2fff20b14443ac0f72988fb74d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/PNG/Buttons/play.png"
-dest_files=["res://.godot/imported/play.png-51c154418d1a70dd559504c0fc554d12.ctex"]
+source_file="res://Resources/Fish/enemy5_5.png"
+dest_files=["res://.godot/imported/enemy5_5.png-713db2fff20b14443ac0f72988fb74d4.ctex"]
 
 [params]
 

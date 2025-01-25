@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwr451r1olkyv"
-path="res://.godot/imported/play.png-51c154418d1a70dd559504c0fc554d12.ctex"
+uid="uid://cijnhjvqjkgpi"
+path="res://.godot/imported/333.png-6faa835d64311529192824a1e836e9b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/PNG/Buttons/play.png"
-dest_files=["res://.godot/imported/play.png-51c154418d1a70dd559504c0fc554d12.ctex"]
+source_file="res://Resources/PNG/OxygenBottle/333.png"
+dest_files=["res://.godot/imported/333.png-6faa835d64311529192824a1e836e9b3.ctex"]
 
 [params]
 
