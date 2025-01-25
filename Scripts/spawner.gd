@@ -5,9 +5,11 @@ extends Node2D
 @onready var Enemy1 = preload("res://enemy1.tscn")
 @onready var Enemy2 = preload("res://enemy2.tscn")
 @onready var Enemy3 = preload("res://enemy3.tscn")
+@onready var Enemy4 = preload("res://enemy4.tscn")
+@onready var Enemy5 = preload("res://enemy5.tscn")
 
 # Now just preload Enemy4 without adding it to the probability system
-@onready var Enemy4 = preload("res://healthbubble.tscn")
+@onready var Bubble = preload("res://healthbubble.tscn")
 
 @export var spawn_interval: float = 0.5
 @export var spawn_offset_x: float = 100.0
@@ -19,12 +21,14 @@ extends Node2D
 @export var prob_enemy1: float = 0.1
 @export var prob_enemy2: float = 0.3
 @export var prob_enemy3: float = 0.6
+@export var prob_enemy4: float = 0.6
+@export var prob_enemy5: float = 0.6
 
 # Interval for spawning Enemy4 specifically
-@export var enemy4_spawn_interval: float = 5.0
+@export var bubble_spawn_interval: float = 5.0
 
 var _timer: Timer
-var _timer_enemy4: Timer  # New timer for Enemy4
+var _timer_bubble: Timer  # New timer for Enemy4
 var camera: Camera2D  # Reference to the active camera
 
 func _ready() -> void:
@@ -41,11 +45,11 @@ func _ready() -> void:
 	add_child(_timer)
 
 	# 2) Timer for Enemy4
-	_timer_enemy4 = Timer.new()
-	_timer_enemy4.wait_time = enemy4_spawn_interval
-	_timer_enemy4.autostart = true
-	_timer_enemy4.timeout.connect(_on_SpawnEnemy4_timeout)
-	add_child(_timer_enemy4)
+	_timer_bubble = Timer.new()
+	_timer_bubble.wait_time = bubble_spawn_interval
+	_timer_bubble.autostart = true
+	_timer_bubble.timeout.connect(_on_SpawnBubble_timeout)
+	add_child(_timer_bubble)
 
 func get_camera_visible_rect() -> Rect2:
 	camera = get_viewport().get_camera_2d()
@@ -61,18 +65,22 @@ func get_camera_visible_rect() -> Rect2:
 func _on_SpawnTimer_timeout() -> void:
 	# Probability-based spawn for the first three enemies
 	var random_pick = randf()
-	var sum_probs = prob_enemy1 + prob_enemy2 + prob_enemy3
+	var sum_probs = prob_enemy1 + prob_enemy2 + prob_enemy3 + prob_enemy4 + prob_enemy5
 	var normalized_pick = random_pick * sum_probs
 
 	if normalized_pick <= prob_enemy1:
 		_spawn_enemy(Enemy1)
 	elif normalized_pick <= prob_enemy1 + prob_enemy2:
 		_spawn_enemy(Enemy2)
-	else:
+	elif normalized_pick <= prob_enemy1 + prob_enemy2 + prob_enemy3:
 		_spawn_enemy(Enemy3)
+	elif normalized_pick <= prob_enemy1 + prob_enemy2 + prob_enemy3 + prob_enemy4:
+		_spawn_enemy(Enemy4)
+	else:
+		_spawn_enemy(Enemy5)
 
 # Called by the second timer to spawn Enemy4
-func _on_SpawnEnemy4_timeout() -> void:
+func _on_SpawnBubble_timeout() -> void:
 	# Spawn Enemy4 relative to the camera
 	_spawn_enemy(Enemy4, true)  # Pass true to indicate it's Enemy4
 
