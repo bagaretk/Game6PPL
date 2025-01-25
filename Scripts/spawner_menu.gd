@@ -8,7 +8,7 @@ extends Node2D
 # Now just preload Enemy4 without adding it to the probability system
 @onready var Enemy4 = preload("res://healthbubble.tscn")
 
-@export var spawn_interval: float = 3.0
+@export var spawn_interval: float = 2.0
 @export var spawn_offset_x: float = 100.0
 @export var spawn_area_top: float = 0.0
 @export var spawn_area_bottom: float = 600.0
@@ -41,10 +41,6 @@ func _ready() -> void:
 	_timer_enemy4.autostart = true
 	_timer_enemy4.timeout.connect(_on_SpawnEnemy4_timeout)
 	add_child(_timer_enemy4)
-
-	# Generate a first wave of enemies immediately
-	_on_SpawnTimer_timeout()  # Generate enemies 1, 2, 3
-	_on_SpawnEnemy4_timeout()  # Generate enemy 4
 
 func _on_SpawnTimer_timeout() -> void:
 	# Probability-based spawn for the first three enemies
