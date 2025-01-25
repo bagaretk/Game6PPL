@@ -46,6 +46,7 @@ shape = SubResource("CapsuleShape2D_mb0wr")
 position = Vector2(-1, 7)
 scale = Vector2(0.525, 0.525)
 sprite_frames = SubResource("SpriteFrames_tp0uf")
+autoplay = "default"
 frame_progress = 0.385909
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
