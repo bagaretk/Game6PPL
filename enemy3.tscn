@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcjvui7pgj3k6"]
+
+[ext_resource type="Script" path="res://Scripts/enemy3.gd" id="1_n34r3"]
+[ext_resource type="Texture2D" uid="uid://ddweg6gbu8kx6" path="res://Resources/enemy3.png" id="2_tiunu"]
+
+[node name="Enemy3" type="CharacterBody2D"]
+script = ExtResource("1_n34r3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_tiunu")
