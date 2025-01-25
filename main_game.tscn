@@ -1,15 +1,84 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbyv22u62lksm"]
+[gd_scene load_steps=13 format=3 uid="uid://bbyv22u62lksm"]
 
+[ext_resource type="Script" path="res://main_game.gd" id="1_3dsh5"]
 [ext_resource type="PackedScene" uid="uid://c54gow3u0auam" path="res://Player_Movement.tscn" id="1_n7quo"]
 [ext_resource type="Texture2D" uid="uid://cdu0ea5e1fxy3" path="res://Resources/PNG/sea_background.png" id="2_t17dc"]
 [ext_resource type="Texture2D" uid="uid://cr3l5ccq07ema" path="res://Resources/PNG/farground.png" id="3_bo0de"]
 [ext_resource type="Texture2D" uid="uid://dkmj1xmytvl3o" path="res://Resources/PNG/foreground.png" id="4_msdfe"]
 [ext_resource type="Texture2D" uid="uid://dmkamagy8seyj" path="res://Resources/PNG/mid_background.png" id="4_pe02m"]
+[ext_resource type="Texture2D" uid="uid://lf72oehue721" path="res://Sprites/foregroundExtended.png" id="6_mxarj"]
 [ext_resource type="PackedScene" uid="uid://bvq0mpkhr2wf6" path="res://spawner.tscn" id="6_vbeu7"]
+[ext_resource type="Texture2D" uid="uid://dd8l832uqrthc" path="res://Sprites/vulcano.png" id="8_7keus"]
+
+[sub_resource type="Animation" id="Animation_m3kk7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(398, 912)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1, 0.1)]
+}
+
+[sub_resource type="Animation" id="Animation_o4u86"]
+resource_name = "cinematic"
+length = 2.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(439, 668), Vector2(430, 654), Vector2(453, 631), Vector2(422, 614), Vector2(461, 586), Vector2(440, 523)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(0.15, 0.15), Vector2(0.4, 0.4), Vector2(0.6, 0.6), Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yh18y"]
+_data = {
+"RESET": SubResource("Animation_m3kk7"),
+"cinematic": SubResource("Animation_o4u86")
+}
 
 [node name="MainGame" type="Node2D"]
+script = ExtResource("1_3dsh5")
 
 [node name="Player" parent="." instance=ExtResource("1_n7quo")]
+z_index = 1
+position = Vector2(398, 912)
+scale = Vector2(0.1, 0.1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -111
@@ -54,4 +123,33 @@ position = Vector2(540, 332)
 scale = Vector2(0.993846, 1.00606)
 texture = ExtResource("4_msdfe")
 
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+position = Vector2(11, 1012)
+motion_scale = Vector2(1, 0.25)
+motion_offset = Vector2(9.19, 0)
+motion_mirroring = Vector2(1900, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer5"]
+position = Vector2(549, 319)
+scale = Vector2(0.993846, 1.00606)
+texture = ExtResource("6_mxarj")
+
 [node name="Spawner" parent="." instance=ExtResource("6_vbeu7")]
+
+[node name="AnimationPlayerCinematic" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_yh18y")
+}
+
+[node name="Vulcano" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(438, 789.44)
+scale = Vector2(2.28, 2.28)
+texture = ExtResource("8_7keus")
+
+[node name="Vulcano2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(639, 806.44)
+scale = Vector2(1.64, 1.64)
+texture = ExtResource("8_7keus")
