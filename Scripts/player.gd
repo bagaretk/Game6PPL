@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-@onready var health_bar = $HealthBar
+#@onready var flash_animation = $FlashAnimation
+@onready var health_bar = $Camera2D/HealthBar
+@onready var health_timer = $HealthTimer # Referință la Timer-ul pentru scăderea vieții
 
 const SPEED = 300.0
 const LIMIT_LEFT = -10000.0
