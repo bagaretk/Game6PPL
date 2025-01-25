@@ -74,7 +74,6 @@ animations = [{
 script = ExtResource("1_5nbjy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("2_knurc")
 
@@ -83,6 +82,7 @@ scale = Vector2(2.95, 2.95)
 shape = SubResource("CircleShape2D_e2qhn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 scale = Vector2(0.215, 0.215)
 sprite_frames = SubResource("SpriteFrames_ms70h")
 autoplay = "default"
