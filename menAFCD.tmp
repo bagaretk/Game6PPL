@@ -26,9 +26,6 @@ flat = true
 [node name="Spawner" parent="." instance=ExtResource("4_uytji")]
 position = Vector2(577, 211)
 script = ExtResource("5_o6dpl")
-spawn_interval = 2.0
-prob_enemy2 = 0.2
-prob_enemy3 = 0.3
-enemy4_spawn_interval = 1.0
+fish_margin = null
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
