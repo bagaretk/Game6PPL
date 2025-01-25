@@ -1,9 +1,9 @@
 extends Node2D
 
 # Existing enemies
-@onready var Enemy1 = preload("res://enemy1.tscn")
-@onready var Enemy2 = preload("res://enemy2.tscn")
-@onready var Enemy3 = preload("res://enemy3.tscn")
+@onready var Enemy1 = preload("res://enemy1_menu.tscn")
+@onready var Enemy2 = preload("res://enemy2_menu.tscn")
+@onready var Enemy3 = preload("res://enemy3_menu.tscn")
 
 # Now just preload Enemy4 without adding it to the probability system
 @onready var Enemy4 = preload("res://healthbubble.tscn")
@@ -103,5 +103,9 @@ func _spawn_enemy(enemy_scene: PackedScene, is_enemy4: bool = false) -> void:
 			var sprite = enemy_instance.get_node_or_null("Sprite2D")
 			if sprite:
 				sprite.flip_h = false
+
+	# Randomize scale for the enemy
+	var random_scale = randf_range(0.3, 1.5)  # Adjust scale between 0.5x and 1.5x
+	enemy_instance.scale = Vector2(random_scale, random_scale)
 
 	get_parent().add_child(enemy_instance)

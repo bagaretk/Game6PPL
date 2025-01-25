@@ -19,7 +19,12 @@ texture = ExtResource("1_b7poy")
 [node name="Spawner" parent="." instance=ExtResource("4_uytji")]
 position = Vector2(577, 211)
 script = ExtResource("5_o6dpl")
+<<<<<<< HEAD
 spawn_interval = 3.0
+=======
+spawn_interval = 2.0
+spawn_area_bottom = 600.0
+>>>>>>> 3da848f4127f3125af83a6c583afc021b7645718
 prob_enemy2 = 0.2
 prob_enemy3 = 0.3
 enemy4_spawn_interval = 1.0

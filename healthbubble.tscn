@@ -71,6 +71,7 @@ animations = [{
 }]
 
 [node name="HealthBubble" type="CharacterBody2D" groups=["Health"]]
+scale = Vector2(1.66, 1.66)
 script = ExtResource("1_5nbjy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
