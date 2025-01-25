@@ -35,7 +35,6 @@ animations = [{
 }]
 
 [node name="Enemy1" type="CharacterBody2D" groups=["Fish"]]
-scale = Vector2(-1, 1)
 script = ExtResource("1_ju2bw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -50,3 +49,4 @@ scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_l1563")
 autoplay = "default"
 frame_progress = 0.280248
+flip_h = true

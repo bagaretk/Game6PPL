@@ -19,13 +19,13 @@ extends Node2D
 
 # Probabilities for the first three enemies
 @export var prob_enemy1: float = 0.1
-@export var prob_enemy2: float = 0.3
-@export var prob_enemy3: float = 0.6
-@export var prob_enemy4: float = 0.6
-@export var prob_enemy5: float = 0.6
+@export var prob_enemy2: float = 0.2
+@export var prob_enemy3: float = 0.2
+@export var prob_enemy4: float = 0.2
+@export var prob_enemy5: float = 0.1
 
 # Interval for spawning Enemy4 specifically
-@export var bubble_spawn_interval: float = 5.0
+@export var bubble_spawn_interval: float = 1.0
 
 var _timer: Timer
 var _timer_bubble: Timer  # New timer for Enemy4
@@ -123,5 +123,5 @@ func _spawn_enemy(enemy_scene: PackedScene, is_enemy4: bool = false) -> void:
 				sprite.scale.x = abs(sprite.scale.x)  # Ensure normal orientation
 				
 	get_parent().add_child(enemy_instance)
-	var random_scale = randf_range(0.6, 1.5)  # Adjust scale between 0.5x and 1.5x
+	var random_scale = randf_range(0.6, 1)  # Adjust scale between 0.5x and 1.5x
 	enemy_instance.scale = Vector2(random_scale, random_scale)	

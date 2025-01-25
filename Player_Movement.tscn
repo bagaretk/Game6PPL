@@ -103,7 +103,7 @@ limit_left = -10000
 limit_right = 10000
 limit_bottom = 820
 position_smoothing_enabled = true
-position_smoothing_speed = 0.5
+position_smoothing_speed = 2.0
 script = ExtResource("3_vrc86")
 
 [node name="LayerBar" type="CanvasLayer" parent="Camera2D"]
