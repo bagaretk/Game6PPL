@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbyv22u62lksm"]
+[gd_scene load_steps=18 format=3 uid="uid://bbyv22u62lksm"]
 
 [ext_resource type="Script" path="res://main_game.gd" id="1_3dsh5"]
 [ext_resource type="PackedScene" uid="uid://c54gow3u0auam" path="res://Player_Movement.tscn" id="1_n7quo"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://dd8l832uqrthc" path="res://Sprites/vulcano.png" id="8_7keus"]
 [ext_resource type="PackedScene" uid="uid://c5efwc6x5b3fc" path="res://touch_control.tscn" id="10_fbtw1"]
 [ext_resource type="Texture2D" uid="uid://bu6a2fcxyk20u" path="res://Resources/Buttons/shoot_button.png" id="11_1k57i"]
+[ext_resource type="Texture2D" uid="uid://ccrjnn620ipky" path="res://Resources/Buttons/Menu.png" id="12_551jl"]
+[ext_resource type="Script" path="res://pause.gd" id="12_osj60"]
+[ext_resource type="Texture2D" uid="uid://c77ec4xh35tct" path="res://Resources/PNG/resume.png" id="14_08vll"]
 
 [sub_resource type="Animation" id="Animation_m3kk7"]
 length = 0.001
@@ -170,4 +173,40 @@ position = Vector2(48, 689)
 scale = Vector2(0.355, 0.355)
 texture_normal = ExtResource("11_1k57i")
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+script = ExtResource("12_osj60")
+
+[node name="Pause" type="TouchScreenButton" parent="CanvasLayer2"]
+position = Vector2(2237, 49)
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_551jl")
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Resume" type="TouchScreenButton" parent="CanvasLayer2/Control"]
+visible = false
+position = Vector2(1070, 482)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("14_08vll")
+
+[node name="Label" type="Label" parent="CanvasLayer2/Control"]
+visible = false
+layout_mode = 0
+offset_left = 976.0
+offset_top = 267.0
+offset_right = 1439.0
+offset_bottom = 432.0
+theme_override_font_sizes/font_size = 120
+text = "PAUSED"
+horizontal_alignment = 1
+uppercase = true
+
 [connection signal="pressed" from="Control/TouchControl2/TouchScreenButton" to="Player" method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Pause" to="CanvasLayer2" method="_on_pause_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Control/Resume" to="CanvasLayer2" method="_on_resume_pressed"]
