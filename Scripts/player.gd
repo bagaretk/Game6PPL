@@ -79,6 +79,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			set_health(hp - 20)
 		elif body is Fish3:
 			set_health(hp - 40)
+		elif body is Fish4:
+			set_health(hp - 30)
+		elif body is Fish5:
+			set_health(hp - 20)
 		elif body is HealthBubble:
 			set_health(hp + 5)
 		body.queue_free()

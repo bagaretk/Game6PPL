@@ -8,7 +8,7 @@ extends Node2D
 @onready var Enemy4 = preload("res://enemy4.tscn")
 @onready var Enemy5 = preload("res://enemy5.tscn")
 
-# Now just preload Enemy4 without adding it to the probability system
+# Now just preload Bubble without adding it to the probability system
 @onready var Bubble = preload("res://healthbubble.tscn")
 
 @export var spawn_interval: float = 0.5
@@ -24,7 +24,7 @@ extends Node2D
 @export var prob_enemy4: float = 0.2
 @export var prob_enemy5: float = 0.1
 
-# Interval for spawning Enemy4 specifically
+# Interval for spawning HealthBubble specifically
 @export var bubble_spawn_interval: float = 1.0
 
 var _timer: Timer
@@ -82,7 +82,7 @@ func _on_SpawnTimer_timeout() -> void:
 # Called by the second timer to spawn Enemy4
 func _on_SpawnBubble_timeout() -> void:
 	# Spawn Enemy4 relative to the camera
-	_spawn_enemy(Enemy4, true)  # Pass true to indicate it's Enemy4
+	_spawn_enemy(Bubble, true)  # Pass true to indicate it's Enemy4
 
 func _spawn_enemy(enemy_scene: PackedScene, is_enemy4: bool = false) -> void:
 	var enemy_instance = enemy_scene.instantiate() as CharacterBody2D

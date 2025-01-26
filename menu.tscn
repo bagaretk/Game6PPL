@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b4emayn3vx0j8"]
 
 [ext_resource type="Texture2D" uid="uid://cdu0ea5e1fxy3" path="res://Resources/PNG/sea_background.png" id="1_b7poy"]
-[ext_resource type="Texture2D" path="res://Resources/PNG/Buttons/play.png" id="3_adkd6"]
+[ext_resource type="Texture2D" uid="uid://cwr451r1olkyv" path="res://Resources/PNG/Buttons/play.png" id="3_adkd6"]
 [ext_resource type="Script" path="res://Scripts/start_btn.gd" id="4_cqu17"]
 [ext_resource type="PackedScene" uid="uid://bvq0mpkhr2wf6" path="res://spawner.tscn" id="4_uytji"]
 [ext_resource type="Script" path="res://Scripts/spawner_menu.gd" id="5_o6dpl"]
@@ -21,7 +21,6 @@ position = Vector2(577, 211)
 script = ExtResource("5_o6dpl")
 spawn_interval = 2.0
 spawn_area_bottom = 600.0
-prob_enemy2 = 0.2
 prob_enemy3 = 0.3
 enemy4_spawn_interval = 1.0
 
