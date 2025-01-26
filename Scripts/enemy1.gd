@@ -6,10 +6,14 @@ class_name Fish1
 var hp: int = 3  # Enemy1 can take 3 hits
 
 func _physics_process(delta: float) -> void:
-	velocity.x = -speed
-	move_and_slide()
+	position.x -= speed * delta  # Manually adjust position based on speed and delta time
+
 
 func take_damage(amount: int) -> void:
 	hp -= amount
 	if hp <= 0:
 		queue_free()  # remove enemy from the scene
+
+
+func _on_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

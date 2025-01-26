@@ -6,8 +6,8 @@ class_name Fish4
 var hp: int = 3  # Enemy1 can take 3 hits
 
 func _physics_process(delta: float) -> void:
-	velocity.x = -speed
-	move_and_slide()
+		position.x -= speed * delta  # Manually adjust position based on speed and delta time
+
 
 func take_damage(amount: int) -> void:
 	hp -= amount

@@ -87,7 +87,8 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-position = Vector2(575, 318)
+position = Vector2(580, 318)
+collision_mask = 2
 script = ExtResource("1_bvn0q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -144,12 +145,6 @@ frame_progress = 0.31246
 [node name="HealthTimer" type="Timer" parent="."]
 wait_time = 0.064
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(6.885, 6.885)
-shape = SubResource("CircleShape2D_fh1j6")
-
 [node name="DamageAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_c68r7")
 
@@ -158,6 +153,13 @@ stream = ExtResource("15_i06im")
 
 [node name="ShootAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_vmyvc")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(6.885, 6.885)
+shape = SubResource("CircleShape2D_fh1j6")
 
 [connection signal="timeout" from="HealthTimer" to="." method="_on_health_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
