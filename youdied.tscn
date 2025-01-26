@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bt1fxm4m3akh4"]
+[gd_scene load_steps=3 format=3 uid="uid://cf66mdy66xltd"]
 
 [ext_resource type="Script" path="res://youdied.gd" id="1_ddt3g"]
 [ext_resource type="Texture2D" uid="uid://cdu0ea5e1fxy3" path="res://Resources/PNG/sea_background.png" id="1_eisri"]
@@ -7,14 +7,15 @@
 script = ExtResource("1_ddt3g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(381, 273)
+position = Vector2(1191, 523)
+scale = Vector2(1.29792, 1.07778)
 texture = ExtResource("1_eisri")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 295.0
-offset_top = 213.0
-offset_right = 864.0
-offset_bottom = 383.0
+offset_left = 883.0
+offset_top = 445.0
+offset_right = 1452.0
+offset_bottom = 615.0
 theme_override_font_sizes/font_size = 124
 text = "You Died!"
 

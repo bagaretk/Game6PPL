@@ -102,7 +102,7 @@ texture = ExtResource("2_xekwp")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0.448425, 0)
 scale = Vector2(0.448369, 0.448369)
-zoom = Vector2(0.825, 0.825)
+zoom = Vector2(1.25, 1.25)
 limit_left = -10000
 limit_right = 10000
 limit_bottom = 820

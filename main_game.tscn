@@ -1,14 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://bbyv22u62lksm"]
+[gd_scene load_steps=15 format=3 uid="uid://bbyv22u62lksm"]
 
 [ext_resource type="Script" path="res://main_game.gd" id="1_3dsh5"]
 [ext_resource type="PackedScene" uid="uid://c54gow3u0auam" path="res://Player_Movement.tscn" id="1_n7quo"]
 [ext_resource type="Texture2D" uid="uid://cdu0ea5e1fxy3" path="res://Resources/PNG/sea_background.png" id="2_t17dc"]
 [ext_resource type="Texture2D" uid="uid://cr3l5ccq07ema" path="res://Resources/PNG/farground.png" id="3_bo0de"]
 [ext_resource type="Texture2D" uid="uid://dkmj1xmytvl3o" path="res://Resources/PNG/foreground.png" id="4_msdfe"]
-[ext_resource type="Texture2D" uid="uid://dmkamagy8seyj" path="res://Resources/PNG/mid_background.png" id="4_pe02m"]
+[ext_resource type="Texture2D" uid="uid://yiddufubu5e5" path="res://Resources/PNG/mid_background - Copie.png" id="5_y7s5n"]
 [ext_resource type="Texture2D" uid="uid://lf72oehue721" path="res://Sprites/foregroundExtended.png" id="6_mxarj"]
 [ext_resource type="PackedScene" uid="uid://bvq0mpkhr2wf6" path="res://spawner.tscn" id="6_vbeu7"]
 [ext_resource type="Texture2D" uid="uid://dd8l832uqrthc" path="res://Sprites/vulcano.png" id="8_7keus"]
+[ext_resource type="PackedScene" path="res://touch_control.tscn" id="10_fbtw1"]
+[ext_resource type="Texture2D" uid="uid://bu6a2fcxyk20u" path="res://Resources/Buttons/shoot_button.png" id="11_1k57i"]
 
 [sub_resource type="Animation" id="Animation_m3kk7"]
 length = 0.001
@@ -96,43 +98,40 @@ texture = ExtResource("2_t17dc")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
 motion_scale = Vector2(0.25, 0.06)
-motion_offset = Vector2(9.19, 0)
-motion_mirroring = Vector2(1900, 0)
+motion_mirroring = Vector2(1920, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
 position = Vector2(540, 332)
-scale = Vector2(0.993846, 1.00606)
 texture = ExtResource("3_bo0de")
+offset = Vector2(485.265, 0)
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.12)
-motion_offset = Vector2(9.19, 0)
-motion_mirroring = Vector2(1900, 0)
+motion_mirroring = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer3"]
-position = Vector2(540, 332)
-scale = Vector2(0.993846, 1.00606)
-texture = ExtResource("4_pe02m")
+position = Vector2(542.5, 332)
+scale = Vector2(1.0013, 1)
+texture = ExtResource("5_y7s5n")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
 motion_scale = Vector2(1, 0.25)
-motion_offset = Vector2(9.19, 0)
-motion_mirroring = Vector2(1900, 0)
+motion_mirroring = Vector2(1920, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer4"]
-position = Vector2(540, 332)
-scale = Vector2(0.993846, 1.00606)
+position = Vector2(1202, 332)
+scale = Vector2(1.25, 1.00606)
 texture = ExtResource("4_msdfe")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
 position = Vector2(11, 1012)
 motion_scale = Vector2(1, 0.25)
 motion_offset = Vector2(9.19, 0)
-motion_mirroring = Vector2(1900, 0)
+motion_mirroring = Vector2(2356, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer5"]
-position = Vector2(549, 319)
-scale = Vector2(0.993846, 1.00606)
+position = Vector2(807.199, 319)
+scale = Vector2(1.25244, 1)
 texture = ExtResource("6_mxarj")
 
 [node name="Spawner" parent="." instance=ExtResource("6_vbeu7")]
@@ -154,3 +153,21 @@ z_index = -1
 position = Vector2(639, 806.44)
 scale = Vector2(1.64, 1.64)
 texture = ExtResource("8_7keus")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -204.0
+offset_top = 101.0
+offset_right = 129.0
+offset_bottom = 296.0
+scale = Vector2(3.895, 3.895)
+
+[node name="TouchControl2" parent="Control" instance=ExtResource("10_fbtw1")]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/TouchControl2"]
+position = Vector2(48, 689)
+scale = Vector2(0.355, 0.355)
+texture_normal = ExtResource("11_1k57i")
+
+[connection signal="pressed" from="Control/TouchControl2/TouchScreenButton" to="Player" method="_on_touch_screen_button_pressed"]

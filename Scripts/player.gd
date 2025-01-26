@@ -97,6 +97,9 @@ func _on_area_2d_body_entered(body: Node) -> void:
 				body.queue_free()
 		elif body is HealthBubble:
 			set_health(hp + 5)
-			body.queue_free()
-			if collect_audio:
-				collect_audio.play()
+		body.queue_free()
+
+
+
+func _on_touch_screen_button_pressed() -> void:
+	_shoot_bubble()
