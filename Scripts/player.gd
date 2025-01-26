@@ -20,7 +20,7 @@ func _ready():
 	health_bar.value = hp
 	health_bar.max_value = max_hp
 	_update_scale()
-	$CollisionShape2D.connect("area_entered", Callable(self, "_on_area_2d_body_entered"))
+	#$CollisionShape2D.connect("area_entered", Callable(self, "_on_area_2d_body_entered"))
 	
 
 func set_health(value: float) -> void:
