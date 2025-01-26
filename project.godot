@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 Bgmusic="*res://bgmusic.tscn"
 
+[display]
+
+window/size/viewport_width=2400
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
+
 [input]
 
 shoot={
