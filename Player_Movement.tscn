@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c54gow3u0auam"]
+[gd_scene load_steps=19 format=3 uid="uid://c54gow3u0auam"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bvn0q"]
 [ext_resource type="Texture2D" uid="uid://c2xo3n7qyg7md" path="res://Resources/clear-deco-bubble-balloon-20-1pc-12298-p.png" id="2_xekwp"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bacblksx3oosr" path="res://Resources/animations/Untitled_design__7_-removebg-preview.png" id="9_akcca"]
 [ext_resource type="Texture2D" uid="uid://y83q20op2i0k" path="res://Resources/animations/Untitled_design__8_-removebg-preview.png" id="10_d58gw"]
 [ext_resource type="Texture2D" uid="uid://06q2cx531phv" path="res://Resources/animations/Untitled_design__9_-removebg-preview.png" id="11_p5f4u"]
+[ext_resource type="Texture2D" uid="uid://bu6a2fcxyk20u" path="res://Resources/Buttons/shoot_button.png" id="14_i0a3o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fh1j6"]
 
@@ -84,7 +85,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-position = Vector2(580, 318)
+position = Vector2(0, 318)
 script = ExtResource("1_bvn0q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -148,5 +149,22 @@ wait_time = 0.064
 scale = Vector2(6.885, 6.885)
 shape = SubResource("CircleShape2D_fh1j6")
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1076.0
+offset_top = 200.0
+offset_right = -721.0
+offset_bottom = 403.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+layer = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/CanvasLayer"]
+position = Vector2(143, 557)
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("14_i0a3o")
+
 [connection signal="timeout" from="HealthTimer" to="." method="_on_health_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="pressed" from="Control/CanvasLayer/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

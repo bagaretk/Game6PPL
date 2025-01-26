@@ -86,3 +86,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		elif body is HealthBubble:
 			set_health(hp + 5)
 		body.queue_free()
+
+
+
+func _on_touch_screen_button_pressed() -> void:
+	_shoot_bubble()

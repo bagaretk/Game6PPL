@@ -9,11 +9,41 @@
 [ext_resource type="Texture2D" uid="uid://2ku2p7w4ekpb" path="res://logo.png" id="7_788jl"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(1.64, 1.64)
+transform = Transform2D(1.64, 0, 0, 1.64, 0, 0)
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1240.0
+offset_bottom = 1052.0
 script = ExtResource("4_cqu17")
 
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 299.0
+offset_right = 604.0
+offset_bottom = 557.0
+scale = Vector2(0.45, 0.45)
+icon = ExtResource("3_adkd6")
+flat = true
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 454.0
+offset_right = 605.0
+offset_bottom = 712.0
+scale = Vector2(0.45, 0.45)
+icon = ExtResource("6_mmh42")
+flat = true
+
 [node name="SeaBackground" type="Sprite2D" parent="."]
-position = Vector2(575.5, 325.375)
-scale = Vector2(0.599479, 0.597454)
+position = Vector2(2413, 1147.37)
+scale = Vector2(2.51354, 2.11968)
 texture = ExtResource("1_b7poy")
 
 [node name="Spawner" parent="." instance=ExtResource("4_uytji")]
@@ -24,30 +54,10 @@ spawn_area_bottom = 600.0
 prob_enemy3 = 0.3
 enemy4_spawn_interval = 1.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 96.0
-offset_top = 299.0
-offset_right = 604.0
-offset_bottom = 557.0
-scale = Vector2(0.45, 0.45)
-icon = ExtResource("3_adkd6")
-flat = true
-
-[node name="Button2" type="Button" parent="CanvasLayer"]
-offset_left = 97.0
-offset_top = 454.0
-offset_right = 605.0
-offset_bottom = 712.0
-scale = Vector2(0.45, 0.45)
-icon = ExtResource("6_mmh42")
-flat = true
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(751, 322)
-scale = Vector2(0.6, 0.6)
+position = Vector2(1569, 498)
+scale = Vector2(1.215, 1.215)
 texture = ExtResource("7_788jl")
 
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="CanvasLayer/Control" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Button2" to="CanvasLayer/Control" method="_on_button_2_pressed"]
