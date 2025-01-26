@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bhebc3pjt4chq" path="res://Resources/Fish/enemy1_4.png" id="6_ffxp2"]
 [ext_resource type="Texture2D" uid="uid://b1r8moxnj08kj" path="res://Resources/Fish/enemy1_5.png" id="7_gddmf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xol6a"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v87ew"]
+radius = 83.0
+height = 248.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fcy3d"]
 animations = [{
@@ -33,11 +35,13 @@ animations = [{
 }]
 
 [node name="Enemy1" type="CharacterBody2D" groups=["Fish"]]
-collision_mask = 2
+collision_layer = 2
 script = ExtResource("1_spwvl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_xol6a")
+position = Vector2(0, 8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_v87ew")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 7)

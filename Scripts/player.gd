@@ -20,6 +20,7 @@ func _ready():
 	health_bar.value = hp
 	health_bar.max_value = max_hp
 	_update_scale()
+	$CollisionShape2D.connect("area_entered", Callable(self, "_on_area_2d_body_entered"))
 	
 
 func set_health(value: float) -> void:
@@ -72,7 +73,7 @@ func _shoot_bubble():
 	
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body: Node) -> void:
 	if body.is_in_group("Fish") || body.is_in_group("Health"): 
 		var damage_audio = $DamageAudio
 		var collect_audio = $CollectAudio
