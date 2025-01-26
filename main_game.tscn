@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://lf72oehue721" path="res://Sprites/foregroundExtended.png" id="6_mxarj"]
 [ext_resource type="PackedScene" uid="uid://bvq0mpkhr2wf6" path="res://spawner.tscn" id="6_vbeu7"]
 [ext_resource type="Texture2D" uid="uid://dd8l832uqrthc" path="res://Sprites/vulcano.png" id="8_7keus"]
-[ext_resource type="PackedScene" path="res://touch_control.tscn" id="10_fbtw1"]
+[ext_resource type="PackedScene" uid="uid://c5efwc6x5b3fc" path="res://touch_control.tscn" id="10_fbtw1"]
 [ext_resource type="Texture2D" uid="uid://bu6a2fcxyk20u" path="res://Resources/Buttons/shoot_button.png" id="11_1k57i"]
 
 [sub_resource type="Animation" id="Animation_m3kk7"]
