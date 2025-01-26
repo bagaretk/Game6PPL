@@ -161,4 +161,3 @@ stream = ExtResource("16_vmyvc")
 
 [connection signal="timeout" from="HealthTimer" to="." method="_on_health_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="pressed" from="Control/CanvasLayer/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

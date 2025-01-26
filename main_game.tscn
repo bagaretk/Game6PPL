@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbyv22u62lksm"]
+[gd_scene load_steps=15 format=3 uid="uid://bbyv22u62lksm"]
 
 [ext_resource type="Script" path="res://main_game.gd" id="1_3dsh5"]
 [ext_resource type="PackedScene" uid="uid://c54gow3u0auam" path="res://Player_Movement.tscn" id="1_n7quo"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bvq0mpkhr2wf6" path="res://spawner.tscn" id="6_vbeu7"]
 [ext_resource type="Texture2D" uid="uid://dd8l832uqrthc" path="res://Sprites/vulcano.png" id="8_7keus"]
 [ext_resource type="PackedScene" uid="uid://c5efwc6x5b3fc" path="res://touch_control.tscn" id="10_fbtw1"]
+[ext_resource type="Texture2D" uid="uid://bu6a2fcxyk20u" path="res://Resources/Buttons/shoot_button.png" id="11_1k57i"]
 
 [sub_resource type="Animation" id="Animation_m3kk7"]
 length = 0.001
@@ -168,3 +169,10 @@ offset_bottom = 296.0
 scale = Vector2(3.895, 3.895)
 
 [node name="TouchControl2" parent="Control" instance=ExtResource("10_fbtw1")]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/TouchControl2"]
+position = Vector2(15, 485)
+scale = Vector2(0.14, 0.14)
+texture_normal = ExtResource("11_1k57i")
+
+[connection signal="pressed" from="Control/TouchControl2/TouchScreenButton" to="Player" method="_on_touch_screen_button_pressed"]

@@ -64,5 +64,5 @@ texture = ExtResource("7_788jl")
 [node name="ButtonAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_3b3pd")
 
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="CanvasLayer/Control" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Button2" to="CanvasLayer/Control" method="_on_button_2_pressed"]
