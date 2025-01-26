@@ -18,10 +18,10 @@ extends Node2D
 @export var spawn_margin: float = 100.0  # Distance outside the camera's view to spawn enemies
 
 # Probabilities for the first three enemies
-@export var prob_enemy1: float = 0.1
-@export var prob_enemy2: float = 0.2
-@export var prob_enemy3: float = 0.2
-@export var prob_enemy4: float = 0.2
+@export var prob_enemy1: float = 0.2
+@export var prob_enemy2: float = 0.30
+@export var prob_enemy3: float = 0.30
+@export var prob_enemy4: float = 0.1
 @export var prob_enemy5: float = 0.1
 
 # Interval for spawning HealthBubble specifically

@@ -12,7 +12,10 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
+	var button_audio = $ButtonAudio
 	get_tree().change_scene_to_file("res://main_game.tscn")
+	if button_audio:
+		button_audio.play()
 
 
 func _on_button_2_pressed() -> void:

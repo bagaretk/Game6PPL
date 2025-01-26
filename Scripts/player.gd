@@ -20,16 +20,14 @@ func _ready():
 	health_bar.value = hp
 	health_bar.max_value = max_hp
 	_update_scale()
+	
 
 func set_health(value: float) -> void:
 	hp = clamp(value, 0, max_hp)
 	health_bar.value = hp
 	_update_scale()
-	
-	# If hp drops to 0, you can trigger "player died" logic here
 	if hp <= 0:
-		# e.g., queue_free(), or trigger a "Game Over"
-		pass
+		get_tree().change_scene_to_file("res://youdied.tscn")
 
 func _update_scale():
 	# Example: scale between 0.1 (min) and 1.0 (max)
@@ -60,8 +58,11 @@ func _physics_process(delta: float) -> void:
 		_shoot_bubble()
 
 func _shoot_bubble():
+	var shoot_audio = $ShootAudio
 	# Each time the player shoots, -5 HP
 	set_health(hp - 5)
+	if shoot_audio:
+		shoot_audio.play()
 
 	# Instance the mini-bubble (projectile) scene and add it to the tree
 	var bubble = preload("res://bubbleshoot.tscn").instantiate()
@@ -73,16 +74,26 @@ func _shoot_bubble():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Fish") || body.is_in_group("Health"): 
-		if body is Fish1:
-			set_health(hp - 10)
-		elif body is Fish2:
-			set_health(hp - 20)
-		elif body is Fish3:
-			set_health(hp - 40)
-		elif body is Fish4:
-			set_health(hp - 30)
-		elif body is Fish5:
-			set_health(hp - 20)
+		var damage_audio = $DamageAudio
+		var collect_audio = $CollectAudio
+		if body.is_in_group("Fish"):
+			if damage_audio:
+				damage_audio.play()
+			if body is Fish1:
+				set_health(hp - 20)
+				body.queue_free()
+			elif body is Fish2:
+				set_health(hp - 10)
+				body.queue_free()
+			elif body is Fish3:
+				set_health(hp - 10)
+				body.queue_free()
+			elif body is Fish4:
+				set_health(hp - 30)
+				body.queue_free()
+			elif body is Fish5:
+				set_health(hp - 30)
+				body.queue_free()
 		elif body is HealthBubble:
 			set_health(hp + 5)
 		body.queue_free()

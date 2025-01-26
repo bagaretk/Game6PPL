@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dsd65botrvjkj"]
 
 [ext_resource type="Script" path="res://Scripts/bubbleshoot.gd" id="1_u6pyk"]
-[ext_resource type="Texture2D" uid="uid://b8n22t0netk5" path="res://Resources/pngtree-white-bubble-speech-png-image_10162559.png" id="2_awgvs"]
+[ext_resource type="Texture2D" uid="uid://c2xo3n7qyg7md" path="res://Resources/clear-deco-bubble-balloon-20-1pc-12298-p.png" id="2_v4vhp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_apuk7"]
 
@@ -13,4 +13,4 @@ shape = SubResource("CircleShape2D_apuk7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_awgvs")
+texture = ExtResource("2_v4vhp")
